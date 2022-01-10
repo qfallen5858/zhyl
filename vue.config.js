@@ -1,10 +1,12 @@
 'use strict'
 const path = require('path')
-
+// import path from 'path'
+const defaultSettings = require('./src/settings.js')
+// import defaultSettings from './src/settings'
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
-
+const name = defaultSettings.title || 'zhyl'
 const port = process.env.port || process.env.npm_config_port || 8090
 
 module.exports = {
