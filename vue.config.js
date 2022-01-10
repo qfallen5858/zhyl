@@ -1,26 +1,26 @@
-"use strict";
-const path = require("path");
+'use strict'
+const path = require('path')
 
 function resolve(dir) {
-  return path.join(__dirname, dir);
+  return path.join(__dirname, dir)
 }
 
-const port = process.env.port || process.env.npm_config_port || 8090;
+const port = process.env.port || process.env.npm_config_port || 8090
 
 module.exports = {
-  publicPath: "/",
-  outputDir: "dist",
-  assetsDir: "static",
-  lintOnSave: process.env.NODE_ENV === "development",
+  publicPath: '/',
+  outputDir: 'dist',
+  assetsDir: 'static',
+  lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
     port: port,
     open: true,
     overlay: {
       warnings: false,
-      errors: true,
+      errors: true
     },
-    before: require("./mock/mock-server.js"),
+    before: require('./mock/mock-server.js')
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
@@ -31,5 +31,5 @@ module.exports = {
         '@': resolve('src')
       }
     }
-  },
-};
+  }
+}
